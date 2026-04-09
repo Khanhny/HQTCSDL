@@ -1,0 +1,265 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|c:\\users\\kny19\\onedrive\\documents\\h\u1EC7 qtcsdl\\hqtcsdl\\pos\\pos\\vw_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|solutionrelative:pos\\vw_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|c:\\users\\kny19\\onedrive\\documents\\h\u1EC7 qtcsdl\\hqtcsdl\\pos\\pos\\vw_sanpham.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|solutionrelative:pos\\vw_sanpham.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|c:\\users\\kny19\\onedrive\\documents\\h\u1EC7 qtcsdl\\hqtcsdl\\pos\\pos\\vw_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|solutionrelative:pos\\vw_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|c:\\users\\kny19\\onedrive\\documents\\h\u1EC7 qtcsdl\\hqtcsdl\\pos\\pos\\vw_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|solutionrelative:pos\\vw_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|c:\\users\\kny19\\onedrive\\documents\\h\u1EC7 qtcsdl\\hqtcsdl\\pos\\pos\\vw_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|solutionrelative:pos\\vw_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|c:\\users\\kny19\\onedrive\\documents\\h\u1EC7 qtcsdl\\hqtcsdl\\pos\\pos\\vw_chitietdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|solutionrelative:pos\\vw_chitietdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|c:\\users\\kny19\\onedrive\\documents\\h\u1EC7 qtcsdl\\hqtcsdl\\pos\\pos\\vw_menu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|solutionrelative:pos\\vw_menu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\pos\\vw_danhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|solutionrelative:pos\\vw_danhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|c:\\users\\kny19\\onedrive\\documents\\h\u1EC7 qtcsdl\\hqtcsdl\\pos\\pos\\vw_danhmuc.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|solutionrelative:pos\\vw_danhmuc.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|c:\\users\\kny19\\onedrive\\documents\\h\u1EC7 qtcsdl\\hqtcsdl\\pos\\pos\\vw_dangnhap.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|solutionrelative:pos\\vw_dangnhap.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|c:\\users\\kny19\\onedrive\\documents\\h\u1EC7 qtcsdl\\hqtcsdl\\pos\\pos\\vw_danhmuc.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|solutionrelative:pos\\vw_danhmuc.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|c:\\users\\kny19\\onedrive\\documents\\h\u1EC7 qtcsdl\\hqtcsdl\\pos\\pos\\vw_danhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|solutionrelative:pos\\vw_danhmuc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|c:\\users\\kny19\\onedrive\\documents\\h\u1EC7 qtcsdl\\hqtcsdl\\pos\\pos\\vw_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|solutionrelative:pos\\vw_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\pos\\vw_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|solutionrelative:pos\\vw_dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|c:\\users\\kny19\\onedrive\\documents\\h\u1EC7 qtcsdl\\hqtcsdl\\pos\\pos\\vw_dangnhap.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{1DF88A21-5CAB-415C-DCDE-23CBEF3451D5}|POS\\POS.csproj|solutionrelative:pos\\vw_dangnhap.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "vw_SanPham.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_SanPham.Designer.cs",
+              "RelativeDocumentMoniker": "POS\\vw_SanPham.Designer.cs",
+              "ToolTip": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_SanPham.Designer.cs",
+              "RelativeToolTip": "POS\\vw_SanPham.Designer.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAADwv8QAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T06:21:02.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "vw_SanPham.cs",
+              "DocumentMoniker": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_SanPham.cs",
+              "RelativeDocumentMoniker": "POS\\vw_SanPham.cs",
+              "ToolTip": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_SanPham.cs",
+              "RelativeToolTip": "POS\\vw_SanPham.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAqwDUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T04:51:20.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "vw_SanPham.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_SanPham.cs",
+              "RelativeDocumentMoniker": "POS\\vw_SanPham.cs",
+              "ToolTip": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_SanPham.cs [Design]",
+              "RelativeToolTip": "POS\\vw_SanPham.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T04:50:59.03Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "vw_Menu.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_Menu.cs",
+              "RelativeDocumentMoniker": "POS\\vw_Menu.cs",
+              "ToolTip": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_Menu.cs [Design]",
+              "RelativeToolTip": "POS\\vw_Menu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T07:00:15.849Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "vw_Menu.cs",
+              "DocumentMoniker": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_Menu.cs",
+              "RelativeDocumentMoniker": "POS\\vw_Menu.cs",
+              "ToolTip": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_Menu.cs",
+              "RelativeToolTip": "POS\\vw_Menu.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAzwEEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T03:46:03.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "vw_DanhMuc.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_DanhMuc.Designer.cs",
+              "RelativeDocumentMoniker": "POS\\vw_DanhMuc.Designer.cs",
+              "ToolTip": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_DanhMuc.Designer.cs",
+              "RelativeToolTip": "POS\\vw_DanhMuc.Designer.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T03:45:51.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "vw_ChiTietDonHang.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_ChiTietDonHang.cs",
+              "RelativeDocumentMoniker": "POS\\vw_ChiTietDonHang.cs",
+              "ToolTip": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_ChiTietDonHang.cs [Design]",
+              "RelativeToolTip": "POS\\vw_ChiTietDonHang.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T06:28:08.322Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "vw_Menu.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_Menu.Designer.cs",
+              "RelativeDocumentMoniker": "POS\\vw_Menu.Designer.cs",
+              "ToolTip": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_Menu.Designer.cs",
+              "RelativeToolTip": "POS\\vw_Menu.Designer.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAywBoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T07:01:03.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "vw_DanhMuc.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_DanhMuc.cs",
+              "RelativeDocumentMoniker": "POS\\vw_DanhMuc.cs",
+              "ToolTip": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_DanhMuc.cs [Design]",
+              "RelativeToolTip": "POS\\vw_DanhMuc.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T03:35:56.408Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "vw_DangNhap.cs",
+              "DocumentMoniker": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_DangNhap.cs",
+              "RelativeDocumentMoniker": "POS\\vw_DangNhap.cs",
+              "ToolTip": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_DangNhap.cs",
+              "RelativeToolTip": "POS\\vw_DangNhap.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAqwCIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T03:27:54.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "vw_DangNhap.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_DangNhap.cs",
+              "RelativeDocumentMoniker": "POS\\vw_DangNhap.cs",
+              "ToolTip": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_DangNhap.cs [Design]",
+              "RelativeToolTip": "POS\\vw_DangNhap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T03:28:01.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "vw_DangNhap.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_DangNhap.Designer.cs",
+              "RelativeDocumentMoniker": "POS\\vw_DangNhap.Designer.cs",
+              "ToolTip": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_DangNhap.Designer.cs",
+              "RelativeToolTip": "POS\\vw_DangNhap.Designer.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAqwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T03:32:42.752Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "vw_DanhMuc.resx",
+              "DocumentMoniker": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_DanhMuc.resx",
+              "RelativeDocumentMoniker": "POS\\vw_DanhMuc.resx",
+              "ToolTip": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_DanhMuc.resx",
+              "RelativeToolTip": "POS\\vw_DanhMuc.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-04-09T03:45:58.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "vw_DanhMuc.cs",
+              "DocumentMoniker": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_DanhMuc.cs",
+              "RelativeDocumentMoniker": "POS\\vw_DanhMuc.cs",
+              "ToolTip": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_DanhMuc.cs",
+              "RelativeToolTip": "POS\\vw_DanhMuc.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA0wB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T03:36:17.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "vw_DangNhap.resx",
+              "DocumentMoniker": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_DangNhap.resx",
+              "RelativeDocumentMoniker": "POS\\vw_DangNhap.resx",
+              "ToolTip": "C:\\Users\\Kny19\\OneDrive\\Documents\\H\u1EC6 QTCSDL\\HQTCSDL\\POS\\POS\\vw_DangNhap.resx",
+              "RelativeToolTip": "POS\\vw_DangNhap.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-04-09T03:35:50.964Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
