@@ -1,0 +1,160 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{742831D3-2931-4FAB-B06D-4DA4B8D14473}|ProjectQuanLyBanHang.csproj|C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\tablemaneger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{742831D3-2931-4FAB-B06D-4DA4B8D14473}|ProjectQuanLyBanHang.csproj|solutionrelative:tablemaneger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{742831D3-2931-4FAB-B06D-4DA4B8D14473}|ProjectQuanLyBanHang.csproj|C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{742831D3-2931-4FAB-B06D-4DA4B8D14473}|ProjectQuanLyBanHang.csproj|solutionrelative:admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{742831D3-2931-4FAB-B06D-4DA4B8D14473}|ProjectQuanLyBanHang.csproj|C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{742831D3-2931-4FAB-B06D-4DA4B8D14473}|ProjectQuanLyBanHang.csproj|solutionrelative:admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{742831D3-2931-4FAB-B06D-4DA4B8D14473}|ProjectQuanLyBanHang.csproj|C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\accountprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{742831D3-2931-4FAB-B06D-4DA4B8D14473}|ProjectQuanLyBanHang.csproj|solutionrelative:accountprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{742831D3-2931-4FAB-B06D-4DA4B8D14473}|ProjectQuanLyBanHang.csproj|C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\accountprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{742831D3-2931-4FAB-B06D-4DA4B8D14473}|ProjectQuanLyBanHang.csproj|solutionrelative:accountprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{742831D3-2931-4FAB-B06D-4DA4B8D14473}|ProjectQuanLyBanHang.csproj|C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\tablemaneger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{742831D3-2931-4FAB-B06D-4DA4B8D14473}|ProjectQuanLyBanHang.csproj|solutionrelative:tablemaneger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{742831D3-2931-4FAB-B06D-4DA4B8D14473}|ProjectQuanLyBanHang.csproj|c:\\users\\user\\source\\repos\\projectquanlybanhang\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{742831D3-2931-4FAB-B06D-4DA4B8D14473}|ProjectQuanLyBanHang.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{742831D3-2931-4FAB-B06D-4DA4B8D14473}|ProjectQuanLyBanHang.csproj|C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{742831D3-2931-4FAB-B06D-4DA4B8D14473}|ProjectQuanLyBanHang.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T13:16:09.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Admin.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\Admin.cs",
+              "RelativeDocumentMoniker": "Admin.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\Admin.cs [Design]",
+              "RelativeToolTip": "Admin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T16:20:58.977Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\Admin.cs",
+              "RelativeDocumentMoniker": "Admin.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\Admin.cs",
+              "RelativeToolTip": "Admin.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAvwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T16:27:35.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountProfile.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\AccountProfile.cs",
+              "RelativeDocumentMoniker": "AccountProfile.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\AccountProfile.cs [Design]",
+              "RelativeToolTip": "AccountProfile.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T12:55:29.927Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TableManeger.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\TableManeger.cs",
+              "RelativeDocumentMoniker": "TableManeger.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\TableManeger.cs [Design]",
+              "RelativeToolTip": "TableManeger.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T12:11:50.225Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountProfile.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\AccountProfile.cs",
+              "RelativeDocumentMoniker": "AccountProfile.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\AccountProfile.cs",
+              "RelativeToolTip": "AccountProfile.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T12:59:46.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TableManeger.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\TableManeger.cs",
+              "RelativeDocumentMoniker": "TableManeger.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\TableManeger.cs",
+              "RelativeToolTip": "TableManeger.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAwDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T12:20:44.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\ProjectQuanLyBanHang\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T12:50:03.052Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
