@@ -1,0 +1,13 @@
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\bin\Debug\ProjectQuanLyBanHang.exe.config
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\bin\Debug\ProjectQuanLyBanHang.exe
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\bin\Debug\ProjectQuanLyBanHang.pdb
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.csproj.AssemblyReference.cache
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.Login.resources
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.Properties.Resources.resources
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.csproj.GenerateResource.cache
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.exe
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.pdb
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.TableManeger.resources
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.AccountProfile.resources
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.Admin.resources
