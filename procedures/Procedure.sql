@@ -189,3 +189,48 @@ BEGIN
     END CATCH
 END;
 GO
+-- 5. Thủ tục Cập Nhật Giá Sản Phẩm 
+CREATE PROCEDURE sp_CapNhatGiaSanPham
+    @MaCa CHAR(4),
+    @MaSanPham CHAR(4),
+    @GiaMoi INT
+AS
+BEGIN
+    --khóa đọc-> Khắc phục Đọc dữ liệu rác
+    SET TRANSACTION ISOLATION LEVEL READ COMMITTED; 
+
+    IF NOT EXISTS (SELECT 1 FROM Sanpham WHERE MaSanPham = @MaSanPham)
+    BEGIN
+        PRINT N'Lỗi: Sản phẩm không tồn tại!';
+        RETURN 0;
+    END
+
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        -- Cập nhật giá
+        UPDATE Sanpham 
+        SET GiaBan = @GiaMoi
+        WHERE MaSanPham = @MaSanPham;
+
+        -- Sinh mã Log ghi lại
+        DECLARE @MaxLog INT, @MaLogMoi CHAR(4);
+        SELECT @MaxLog = ISNULL(MAX(CAST(RIGHT(MaLog, 3) AS INT)), 0) FROM Lichsugiaotac WITH (UPDLOCK, HOLDLOCK);
+        SET @MaLogMoi = 'L' + RIGHT('000' + CAST(@MaxLog + 1 AS VARCHAR(3)), 3);
+
+        DECLARE @ChiTiet NVARCHAR(100) = N'Cập nhật giá SP ' + @MaSanPham + N' thành ' + CAST(@GiaMoi AS VARCHAR(20));
+
+        INSERT INTO Lichsugiaotac (MaLog, MaDon, MaCa, HanhDong, NoiDungChiTiet, ThoiGian)
+        VALUES (@MaLogMoi, NULL, @MaCa, 'Cap nhat gia', @ChiTiet, GETDATE());
+
+        COMMIT TRANSACTION;
+        PRINT N'Cập nhật giá thành công!';
+        RETURN 1;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
+        PRINT N'Lỗi giao tác: ' + ERROR_MESSAGE();
+        RETURN 0;
+    END CATCH
+END;
+GO
