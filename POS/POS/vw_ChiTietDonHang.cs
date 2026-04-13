@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Data;
+using Microsoft.Data.SqlClient; // Thay vì System.Data.SqlClientusing System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -6,6 +7,7 @@ namespace POS
 {
     public partial class vw_ChiTietDonHang : Form
     {
+        string connectionString = @"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=QuanLyBanHang; Integrated Security=True; Connect Timeout=30; Encrypt=False; TrustServer Certificate=False;";
         public vw_ChiTietDonHang()
         {
             InitializeComponent();
@@ -24,6 +26,11 @@ namespace POS
         private void btn_QuayLai_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

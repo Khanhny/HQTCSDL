@@ -34,6 +34,7 @@
             colSL = new DataGridViewTextBoxColumn();
             colGia = new DataGridViewTextBoxColumn();
             colThanhTien = new DataGridViewTextBoxColumn();
+            btn_ThanhToan = new Button();
             ((System.ComponentModel.ISupportInitialize)dgv_ChiTietDonHang).BeginInit();
             SuspendLayout();
             // 
@@ -82,11 +83,22 @@
             colThanhTien.Name = "colThanhTien";
             colThanhTien.Width = 125;
             // 
+            // btn_ThanhToan
+            // 
+            btn_ThanhToan.Location = new Point(666, 394);
+            btn_ThanhToan.Name = "btn_ThanhToan";
+            btn_ThanhToan.Size = new Size(122, 29);
+            btn_ThanhToan.TabIndex = 1;
+            btn_ThanhToan.Text = "THANH TOÁN ";
+            btn_ThanhToan.UseVisualStyleBackColor = true;
+            btn_ThanhToan.Click += button1_Click;
+            // 
             // vw_ChiTietDonHang
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btn_ThanhToan);
             Controls.Add(dgv_ChiTietDonHang);
             Name = "vw_ChiTietDonHang";
             Text = "vw_ChiTietDonHang";
@@ -102,5 +114,6 @@
         private DataGridViewTextBoxColumn colSL;
         private DataGridViewTextBoxColumn colGia;
         private DataGridViewTextBoxColumn colThanhTien;
+        private Button btn_ThanhToan;
     }
 }

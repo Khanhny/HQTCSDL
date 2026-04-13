@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Data;
+using Microsoft.Data.SqlClient; // Thay vì System.Data.SqlClientusing System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

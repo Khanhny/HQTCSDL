@@ -1,10 +1,12 @@
-﻿using System;
+﻿using System.Data;
+using Microsoft.Data.SqlClient; // Thay vì System.Data.SqlClientusing System;
 using System.Windows.Forms;
 
 namespace POS
 {
     public partial class vw_DangNhap : Form
     {
+        string connectionString = @"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=QuanLyBanHang; Integrated Security=True; Connect Timeout=30; Encrypt=False; TrustServer Certificate=False;";
         public vw_DangNhap()
         {
             InitializeComponent();

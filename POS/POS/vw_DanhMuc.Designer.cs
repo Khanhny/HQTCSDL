@@ -39,6 +39,7 @@
             txtb_TraTraiCay = new TextBox();
             btn_DanhMuc_TraTraiCay = new Button();
             txtb_DanhMucSanPham = new TextBox();
+            btnTest_Click = new Button();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,13 +57,14 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(706, 510);
             flowLayoutPanel1.TabIndex = 0;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
+            //flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // txtb_CaPhe
             // 
             txtb_CaPhe.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             txtb_CaPhe.Location = new Point(3, 3);
             txtb_CaPhe.Name = "txtb_CaPhe";
+            txtb_CaPhe.ReadOnly = true;
             txtb_CaPhe.Size = new Size(104, 34);
             txtb_CaPhe.TabIndex = 2;
             txtb_CaPhe.Text = "Cà phê";
@@ -85,11 +87,12 @@
             txtb_TraSua.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             txtb_TraSua.Location = new Point(322, 3);
             txtb_TraSua.Name = "txtb_TraSua";
+            txtb_TraSua.ReadOnly = true;
             txtb_TraSua.Size = new Size(108, 34);
             txtb_TraSua.TabIndex = 3;
             txtb_TraSua.Text = "Trà sữa";
             txtb_TraSua.TextAlign = HorizontalAlignment.Right;
-            txtb_TraSua.TextChanged += textBox5_TextChanged;
+            //txtb_TraSua.TextChanged += textBox5_TextChanged;
             // 
             // btn_DanhMuc_TraSua
             // 
@@ -102,16 +105,18 @@
             btn_DanhMuc_TraSua.Size = new Size(203, 153);
             btn_DanhMuc_TraSua.TabIndex = 1;
             btn_DanhMuc_TraSua.UseVisualStyleBackColor = true;
+            btn_DanhMuc_TraSua.Click += btn_DanhMuc_TraSua_Click;
             // 
             // txtb_Matcha
             // 
             txtb_Matcha.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             txtb_Matcha.Location = new Point(3, 162);
             txtb_Matcha.Name = "txtb_Matcha";
+            txtb_Matcha.ReadOnly = true;
             txtb_Matcha.Size = new Size(93, 34);
             txtb_Matcha.TabIndex = 4;
             txtb_Matcha.Text = "Matcha";
-            txtb_Matcha.TextChanged += textBox7_TextChanged;
+            //txtb_Matcha.TextChanged += textBox7_TextChanged;
             // 
             // btn_DanhMuc_Matcha
             // 
@@ -131,6 +136,7 @@
             txtb_TraTraiCay.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             txtb_TraTraiCay.Location = new Point(311, 162);
             txtb_TraTraiCay.Name = "txtb_TraTraiCay";
+            txtb_TraTraiCay.ReadOnly = true;
             txtb_TraTraiCay.Size = new Size(119, 34);
             txtb_TraTraiCay.TabIndex = 7;
             txtb_TraTraiCay.Text = "Trà trái cây";
@@ -156,13 +162,24 @@
             txtb_DanhMucSanPham.Size = new Size(261, 65);
             txtb_DanhMucSanPham.TabIndex = 1;
             txtb_DanhMucSanPham.Text = "DANH MỤC";
-            txtb_DanhMucSanPham.TextChanged += textBox1_TextChanged_1;
+            //txtb_DanhMucSanPham.TextChanged += textBox1_TextChanged_1;
+            // 
+            // btnTest_Click
+            // 
+            btnTest_Click.Location = new Point(68, 30);
+            btnTest_Click.Name = "btnTest_Click";
+            btnTest_Click.Size = new Size(94, 29);
+            btnTest_Click.TabIndex = 2;
+            btnTest_Click.Text = "button1";
+            btnTest_Click.UseVisualStyleBackColor = true;
+            btnTest_Click.Click += button1_Click_1;
             // 
             // vw_DanhMuc
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnTest_Click);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(txtb_DanhMucSanPham);
             Name = "vw_DanhMuc";
@@ -186,5 +203,6 @@
         private TextBox txtb_TraSua;
         private TextBox txtb_Matcha;
         private TextBox txtb_TraTraiCay;
+        private Button btnTest_Click;
     }
 }
