@@ -1,0 +1,30 @@
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\bin\Debug\ProjectQuanLyBanHang.exe.config
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\bin\Debug\ProjectQuanLyBanHang.exe
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\bin\Debug\ProjectQuanLyBanHang.pdb
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.csproj.AssemblyReference.cache
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.Login.resources
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.Properties.Resources.resources
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.csproj.GenerateResource.cache
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.exe
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.pdb
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.TableManeger.resources
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.AccountProfile.resources
+C:\Users\USER\source\repos\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.Admin.resources
+C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\HQTCSDL\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.csproj.AssemblyReference.cache
+C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\HQTCSDL\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.AccountProfile.resources
+C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\HQTCSDL\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.Login.resources
+C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\HQTCSDL\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.Properties.Resources.resources
+C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\HQTCSDL\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.Menu.resources
+C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\HQTCSDL\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.csproj.GenerateResource.cache
+C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\HQTCSDL\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.csproj.CoreCompileInputs.cache
+C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\HQTCSDL\ProjectQuanLyBanHang\bin\Debug\ProjectQuanLyBanHang.exe.config
+C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\HQTCSDL\ProjectQuanLyBanHang\bin\Debug\ProjectQuanLyBanHang.exe
+C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\HQTCSDL\ProjectQuanLyBanHang\bin\Debug\ProjectQuanLyBanHang.pdb
+C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\HQTCSDL\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.exe
+C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\HQTCSDL\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.pdb
+C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\HQTCSDL\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.vw_ChonSize.resources
+C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\HQTCSDL\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.vw_ThanhToan.resources
+C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\HQTCSDL\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.vw_ThanhCong.resources
+C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\HQTCSDL\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.vw_BaoCaoDoanhThu.resources
+C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\HQTCSDL\ProjectQuanLyBanHang\obj\Debug\ProjectQuanLyBanHang.vw_DonHang.resources
