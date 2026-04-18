@@ -3,13 +3,19 @@ CREATE OR ALTER PROCEDURE sp_QL_CapNhatGiaSP
     @GiaMoi DECIMAL(18,2)
 AS
 BEGIN
+    SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
     BEGIN TRANSACTION;
     BEGIN TRY
-        UPDATE DoUong SET Gia = @GiaMoi WHERE MaMon = @MaMon;
+        UPDATE DoUong WITH (XLOCK, HOLDLOCK) 
+        SET Gia = @GiaMoi 
+        WHERE MaMon = @MaMon;
+
         COMMIT TRANSACTION;
+        PRINT N'Cập nhật giá thành công.';
     END TRY
     BEGIN CATCH
         ROLLBACK TRANSACTION;
+        THROW;
     END CATCH
 END;
 GO
@@ -21,11 +27,15 @@ BEGIN
     SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
     BEGIN TRANSACTION;
     BEGIN TRY
-        SELECT TenMon, Gia FROM DoUong WHERE MaMon = @MaMon;
+        SELECT TenMon, Gia 
+        FROM DoUong WITH (SHDLOCK) 
+        WHERE MaMon = @MaMon;
+
         COMMIT TRANSACTION;
     END TRY
     BEGIN CATCH
         ROLLBACK TRANSACTION;
+        THROW;
     END CATCH
 END;
 GO
