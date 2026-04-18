@@ -1,10 +1,10 @@
--- Thủ tục thanh toán
+-- Thủ thanh toán T3  
 CREATE OR ALTER PROCEDURE sp_ThanhToanDonHang
     @MaDon CHAR(4),
     @MaCa INT
 AS
 BEGIN
-    -- [GIẢI QUYẾT DEADLOCK]: Bảo vệ luồng Thanh toán bằng mức ưu tiên cao nhất
+    -- [GIẢI PHÁP 1]: Đặt quyền ưu tiên CAO 
     SET DEADLOCK_PRIORITY HIGH;
     SET TRANSACTION ISOLATION LEVEL READ COMMITTED; 
 
@@ -14,75 +14,47 @@ BEGIN
         RETURN 0;
     END
 
-    -- Cài đặt thông số cho vòng lặp Retry tự động
-    DECLARE @RetryCount INT = 0;
-    DECLARE @MaxRetries INT = 3;
-    DECLARE @Success BIT = 0;
+    -- [GIẢI PHÁP 2]: Dùng TRY...CATCH để bắt lỗi tranh chấp
+    BEGIN TRY
+        BEGIN TRANSACTION;
 
-    WHILE @RetryCount < @MaxRetries AND @Success = 0
-    BEGIN
-        -- [GIẢI QUYẾT DEADLOCK]: Bọc giao tác trong khối TRY...CATCH
-        BEGIN TRY
-            BEGIN TRANSACTION;
-
-            -- Tính lại tổng tiền và chốt hóa đơn
-            DECLARE @TongTien INT;
-            SELECT @TongTien = TongTien FROM Donhang WHERE MaDon = @MaDon;
-
+            -- Cập nhật giờ thanh toán
             UPDATE Donhang 
             SET ThoiGian = GETDATE()
             WHERE MaDon = @MaDon;
 
-            -- Ghi Lịch sử giao tác
+            -- Ghi lịch sử
             DECLARE @MaxLog INT, @MaLogMoi CHAR(4);
             SELECT @MaxLog = ISNULL(MAX(CAST(RIGHT(MaLog, 3) AS INT)), 0) FROM Lichsugiaotac WITH (UPDLOCK, HOLDLOCK);
             SET @MaLogMoi = 'L' + RIGHT('000' + CAST(@MaxLog + 1 AS VARCHAR(3)), 3);
 
-            DECLARE @ChiTietLog NVARCHAR(100) = N'Chốt bill thành công. Tổng: ' + CAST(@TongTien AS VARCHAR(20));
             INSERT INTO Lichsugiaotac (MaLog, MaDon, MaCa, HanhDong, NoiDungChiTiet, ThoiGian)
-            VALUES (@MaLogMoi, @MaDon, @MaCa, 'Thanh toan', @ChiTietLog, GETDATE());
+            VALUES (@MaLogMoi, @MaDon, @MaCa, 'Thanh toan', N'Thành công', GETDATE());
 
-            COMMIT TRANSACTION;
-            
-            -- Giao dịch thành công, thoát vòng lặp
-            SET @Success = 1; 
-            PRINT N'THANH TOÁN THÀNH CÔNG CHO ĐƠN: ' + @MaDon;
-            RETURN 1;
-
-        END TRY
-        BEGIN CATCH
-            -- Có lỗi xảy ra, lập tức Rollback để nhả toàn bộ khóa đang giữ
-            IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
-
-            -- [GIẢI QUYẾT DEADLOCK]: Nếu mã lỗi là 1205 (Deadlock), tiến hành Retry
-            IF ERROR_NUMBER() = 1205
-            BEGIN
-                SET @RetryCount = @RetryCount + 1;
-                PRINT N'Hệ thống đang bận (Deadlock). Tự động thử lại lần ' + CAST(@RetryCount AS VARCHAR);
-                WAITFOR DELAY '00:00:01'; -- Nghỉ 1 giây rồi chạy lại
-            END
-            ELSE
-            BEGIN
-                -- Lỗi cú pháp hoặc lỗi khác thì báo lỗi và dừng hoàn toàn
-                PRINT N'Lỗi hệ thống: ' + ERROR_MESSAGE();
-                RETURN 0; 
-            END
-        END CATCH
-    END
-
-    IF @Success = 0
-        PRINT N'Giao dịch thanh toán thất bại: Hệ thống quá tải sau 3 lần thử.';
-    RETURN 0;
+        COMMIT TRANSACTION;
+        PRINT N'THANH TOÁN THÀNH CÔNG!';
+        RETURN 1;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
+        
+        -- Bắt mã lỗi 1205 để thông báo chạy lại
+        IF ERROR_NUMBER() = 1205
+            PRINT N'Xung đột dữ liệu. Hệ thống sẽ tự động thực thi lại...';
+        ELSE
+            PRINT N'Lỗi hệ thống: ' + ERROR_MESSAGE();
+        RETURN 0;
+    END CATCH
 END;
 GO
--- Thủ tục cập nhập giá
+-- Thủ tục đổi giá T1
 CREATE OR ALTER PROCEDURE sp_CapNhatGiaSanPham
     @MaCa INT,
     @MaSanPham CHAR(4),
     @GiaMoi INT
 AS
 BEGIN
-    -- [GIẢI QUYẾT DEADLOCK]: Hạ mức ưu tiên, nhường tài nguyên cho Thanh toán nếu xảy ra tranh chấp
+    -- [GIẢI PHÁP 1]: Đặt quyền ưu tiên THẤP (Chấp nhận bị hệ thống "giết" để nhường đường)
     SET DEADLOCK_PRIORITY LOW;
     SET TRANSACTION ISOLATION LEVEL READ COMMITTED; 
 
@@ -92,56 +64,35 @@ BEGIN
         RETURN 0;
     END
 
-    DECLARE @RetryCount INT = 0;
-    DECLARE @MaxRetries INT = 3;
-    DECLARE @Success BIT = 0;
+    -- [GIẢI PHÁP 2]: Dùng TRY...CATCH để bắt lỗi 1205
+    BEGIN TRY
+        BEGIN TRANSACTION;
 
-    WHILE @RetryCount < @MaxRetries AND @Success = 0
-    BEGIN
-        BEGIN TRY
-            BEGIN TRANSACTION;
-
-            -- Cập nhật giá sản phẩm
+            -- Logic gốc: Cập nhật giá sản phẩm
             UPDATE Sanpham 
             SET GiaBan = @GiaMoi 
             WHERE MaSanPham = @MaSanPham;
 
-            -- Ghi Lịch sử giao tác
+            -- Logic gốc: Ghi lịch sử
             DECLARE @MaxLog INT, @MaLogMoi CHAR(4);
             SELECT @MaxLog = ISNULL(MAX(CAST(RIGHT(MaLog, 3) AS INT)), 0) FROM Lichsugiaotac WITH (UPDLOCK, HOLDLOCK);
             SET @MaLogMoi = 'L' + RIGHT('000' + CAST(@MaxLog + 1 AS VARCHAR(3)), 3);
 
-            DECLARE @ChiTiet NVARCHAR(100) = N'Cập nhật giá SP ' + @MaSanPham + N' thành ' + CAST(@GiaMoi AS VARCHAR(20));
-            INSERT INTO Lichsugiaotac (MaLog, MaDon, MaCa, HanhDong, NoiDungChiTiet, ThoiGian)
-            VALUES (@MaLogMoi, NULL, @MaCa, 'Cap nhat gia', @ChiTiet, GETDATE());
+            INSERT INTO Lichsugiaotac (MaLog, NULL, @MaCa, 'Cap nhat gia', N'Đổi giá mới', GETDATE());
 
-            COMMIT TRANSACTION;
-            
-            SET @Success = 1;
-            PRINT N'Cập nhật giá thành công!';
-            RETURN 1;
+        COMMIT TRANSACTION;
+        PRINT N'CẬP NHẬT GIÁ THÀNH CÔNG!';
+        RETURN 1;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
 
-        END TRY
-        BEGIN CATCH
-            IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
-
-            -- Nếu bị hệ thống chọn làm nạn nhân (1205), tự động lùi lại và thử sau
-            IF ERROR_NUMBER() = 1205
-            BEGIN
-                SET @RetryCount = @RetryCount + 1;
-                PRINT N'Bị chọn làm nạn nhân (Deadlock). Đang rút lui và thử lại lần ' + CAST(@RetryCount AS VARCHAR);
-                WAITFOR DELAY '00:00:01';
-            END
-            ELSE
-            BEGIN
-                PRINT N'Lỗi: ' + ERROR_MESSAGE();
-                RETURN 0;
-            END
-        END CATCH
-    END
-
-    IF @Success = 0
-        PRINT N'Cập nhật giá thất bại. Vui lòng thao tác lại sau!';
-    RETURN 0;
+        -- Bắt lỗi Deadlock để thực thi lại
+        IF ERROR_NUMBER() = 1205
+            PRINT N'Xung đột dữ liệu. Hệ thống sẽ tự động thực thi lại...';
+        ELSE
+            PRINT N'Lỗi hệ thống: ' + ERROR_MESSAGE();
+        RETURN 0;
+    END CATCH
 END;
 GO
