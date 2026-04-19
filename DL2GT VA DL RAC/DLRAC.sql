@@ -1,33 +1,41 @@
-CREATE OR ALTER PROCEDURE sp_QL_CapNhatGiaSP
-    @MaMon INT,
-    @GiaMoi DECIMAL(18,2)
-AS
-BEGIN
-    BEGIN TRANSACTION;
-    BEGIN TRY
-        UPDATE DoUong SET Gia = @GiaMoi WHERE MaMon = @MaMon;
-        
-        WAITFOR DELAY '00:00:10'; 
-
-ROLLBACK TRANSACTION;
-    END TRY
-    BEGIN CATCH
-        IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
-    END CATCH
-END;
-
 CREATE OR ALTER PROCEDURE sp_NV_XemGiaTinhTien
-    @MaMon INT
+    @MaSanPham CHAR(4)
 AS
 BEGIN
     SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED; 
     
     BEGIN TRANSACTION;
     BEGIN TRY
-        SELECT TenMon, Gia FROM DoUong WHERE MaMon = @MaMon;
+        SELECT TenSanPham, GiaBan 
+        FROM Sanpham 
+        WHERE MaSanPham = @MaSanPham;
+
         COMMIT TRANSACTION;
     END TRY
     BEGIN CATCH
         IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
+        THROW;
     END CATCH
 END;
+GO
+
+CREATE OR ALTER PROCEDURE sp_NV_XemGiaTinhTien
+    @MaSanPham CHAR(4)
+AS
+BEGIN
+    SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED; 
+    
+    BEGIN TRANSACTION;
+    BEGIN TRY
+        SELECT TenSanPham, GiaBan 
+        FROM Sanpham 
+        WHERE MaSanPham = @MaSanPham;
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
+        THROW;
+    END CATCH
+END;
+GO
