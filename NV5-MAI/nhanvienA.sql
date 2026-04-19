@@ -70,43 +70,20 @@ BEGIN TRAN;
 COMMIT TRAN;
 GO
 -- ------------------------------------------------------------
--- VẤN ĐỀ 3: MẤT DL CẬP NHẬT  (NHÂN VIÊN A)
--- CÁCH GIẢI QUYẾT 2PL:
---   Dùng REPEATABLE READ để Lock-S được giữ sau SELECT (nếu dùng READ COMMITTED mặc định thì Lock-S nhả ngay sau SELECT, không tái hiện được deadlock này).
---   Kết quả: DBMS phát hiện deadlock và rollback 1 bên.
-
-SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+--- VẤN ĐỀ 3: MẤT DỮ LIỆU CẬP NHẬT (NHÂN VIÊN A)
+-- CÁCH GIẢI QUYẾT 2PL: Dùng UPDLOCK trong Procedure.
+USE QuanLyBanHang;
 BEGIN TRAN;
+    PRINT N'[NV A] Mở đơn, gọi procedure thêm 2 ly...';
 
-    DECLARE @SL_A INT;
-
-    -- [LOCK-S ĐẶT TẠI ĐÂY — GIỮ ĐẾN KHI COMMIT]
-    -- NV A mở đơn, gọi procedure đọc số lượng hiện tại.
-    -- Bên trong procedure có SELECT SoLuong từ Chitietdon → Hệ thống đặt Lock-S lên bản ghi (D001, SP01).
-    -- REPEATABLE READ giữ Lock-S này cho đến khi COMMIT.
-    SELECT @SL_A = SoLuong
-    FROM   Chitietdon
-    WHERE  MaDon = 'D001' AND MaSanPham = 'SP01';
-
-    PRINT N'[NV A - Vđề 3] Mở đơn, thấy số lượng: '
-          + CAST(@SL_A AS VARCHAR(20))
-          + N' ly  →  Đang giữ Lock-S trên Chitietdon.';
-
-    -- Giả lập độ trễ (5 giây) để NV B kịp chạy SELECT và lấy Lock-S của mình trước khi NV A đòi nâng Lock-X.
-    WAITFOR DELAY '00:00:05';
-
-    PRINT N'[NV A - Vđề 3] Bấm Lưu (+2 ly) → muốn nâng Lock-S lên Lock-X...';
-
-    -- [NÂNG LOCK-S → LOCK-X TẠI ĐÂY]
-    -- NV A gọi procedure UPDATE số lượng.
-    -- Bên trong procedure có UPDATE Chitietdon → muốn nâng Lock-S lên Lock-X.
-    -- Nhưng NV B đang giữ Lock-S trên cùng bản ghi → NV A bị ĐỢI.
-    -- NV B cũng đang đợi NV A nhả Lock-S để lên Lock-X → Circular wait → DEADLOCK.
-    -- DBMS sẽ tự động HỦY (Abort) một trong hai.
+    -- Bên trong SP có SELECT WITH (UPDLOCK). 
+    -- NV A sẽ chiếm giữ UPDLOCK và chờ 5 giây (Giả lập thao tác).
     EXEC sp_ThemSanPhamVaoDon
         @MaDon       = 'D001',
         @MaSanPham   = 'SP01',
-        @SoLuongThem = 2;       -- NV A muốn thêm 2 ly
+        @SoLuongThem = 2,
+        @Delay       = '00:00:05'; -- Cố tình ngâm khóa 5 giây
 
+    PRINT N'[NV A] Giao dịch hoàn tất, đã nhả UPDLOCK!';
 COMMIT TRAN;
 GO
