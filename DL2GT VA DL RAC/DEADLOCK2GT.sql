@@ -1,39 +1,39 @@
 CREATE OR ALTER PROCEDURE sp_NV_ThanhToanDon
-    @MaDon VARCHAR(20),  
-    @MaDanhMuc CHAR(4)  
+    @MaDon VARCHAR(20)
 AS
 BEGIN
     SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
     
     BEGIN TRANSACTION;
     BEGIN TRY
-        IF EXISTS (SELECT 1 FROM Danhmuc WITH (UPDLOCK, HOLDLOCK) WHERE MaDanhMuc = @MaDanhMuc)
+        IF EXISTS (SELECT 1 FROM Donhang WITH (UPDLOCK, HOLDLOCK) WHERE MaDon = @MaDon)
         BEGIN
-            IF EXISTS (SELECT 1 FROM Chitietdon WITH (UPDLOCK, HOLDLOCK) WHERE MaDon = @MaDon)
-            BEGIN
-                UPDATE Chitietdon 
-                SET TrangThai = N'Đã thanh toán' 
-                WHERE MaDon = @MaDon;
-            END
+            UPDATE Donhang
+            SET TongTien = ISNULL((
+                SELECT SUM(SoLuong * Gia) 
+                FROM Chitietdon 
+                WHERE MaDon = @MaDon
+            ), 0)
+            WHERE MaDon = @MaDon;
+
+            PRINT N'Đã cập nhật tổng tiền cho đơn hàng: ' + @MaDon;
+        END
+        ELSE
+        BEGIN
+            PRINT N'Lỗi: Không tìm thấy mã đơn hàng.';
         END
 
         COMMIT TRANSACTION;
-        PRINT N'Thanh toán thành công.';
     END TRY
     BEGIN CATCH
-        IF ERROR_NUMBER() = 1205
-            PRINT N'Phát hiện Deadlock - Giao dịch bị hủy.';
-        
         IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
-        
-        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
-        RAISERROR(@ErrorMessage, 16, 1);
+        THROW;
     END CATCH
 END;
 GO
 
 CREATE OR ALTER PROCEDURE sp_QL_XoaDanhMucAnToan
-    @MaDanhMuc CHAR(4) 
+    @MaDanhMuc CHAR(4)
 AS
 BEGIN
     SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
@@ -49,18 +49,19 @@ BEGIN
             END
             ELSE
             BEGIN
-                PRINT N'Không thể xóa: Danh mục này đang chứa các sản phẩm.';
+                PRINT N'Không thể xóa: Danh mục này đang chứa sản phẩm.';
             END
         END
         ELSE
-            PRINT N'Danh mục không tồn tại.';
+        BEGIN
+            PRINT N'Lỗi: Danh mục không tồn tại.';
+        END
 
         COMMIT TRANSACTION;
     END TRY
     BEGIN CATCH
         IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
-        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
-        RAISERROR(@ErrorMessage, 16, 1);
+        THROW;
     END CATCH
 END;
 GO
