@@ -41,18 +41,19 @@
             this.lblThanhCong.AutoSize = true;
             this.lblThanhCong.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThanhCong.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblThanhCong.Location = new System.Drawing.Point(34, 229);
+            this.lblThanhCong.Location = new System.Drawing.Point(34, 249);
             this.lblThanhCong.Name = "lblThanhCong";
             this.lblThanhCong.Size = new System.Drawing.Size(369, 41);
             this.lblThanhCong.TabIndex = 1;
             this.lblThanhCong.Text = "Thanh Toán Thành Công!";
+            this.lblThanhCong.Click += new System.EventHandler(this.lblThanhCong_Click);
             // 
             // lblChiTiet
             // 
             this.lblChiTiet.AutoSize = true;
             this.lblChiTiet.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChiTiet.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblChiTiet.Location = new System.Drawing.Point(152, 270);
+            this.lblChiTiet.Location = new System.Drawing.Point(110, 290);
             this.lblChiTiet.Name = "lblChiTiet";
             this.lblChiTiet.Size = new System.Drawing.Size(76, 31);
             this.lblChiTiet.TabIndex = 2;
@@ -72,9 +73,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(104, 38);
+            this.pictureBox1.Location = new System.Drawing.Point(64, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 188);
+            this.pictureBox1.Size = new System.Drawing.Size(272, 234);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -89,6 +90,7 @@
             this.Controls.Add(this.lblThanhCong);
             this.Controls.Add(this.pictureBox1);
             this.Name = "vw_ThanhCong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "vw_ThanhCong";
             this.Load += new System.EventHandler(this.vw_ThanhCong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

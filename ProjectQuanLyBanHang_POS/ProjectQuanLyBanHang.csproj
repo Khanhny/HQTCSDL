@@ -52,6 +52,7 @@
     <Compile Include="AccountProfile.Designer.cs">
       <DependentUpon>AccountProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="DuLieu.cs" />
     <Compile Include="vw_DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>

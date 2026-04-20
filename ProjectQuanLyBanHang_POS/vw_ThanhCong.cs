@@ -34,5 +34,10 @@ namespace ProjectQuanLyBanHang
         {
             lblChiTiet.Text = thongTinChiTiet;
         }
+
+        private void lblThanhCong_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

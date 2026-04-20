@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,11 +13,13 @@ namespace ProjectQuanLyBanHang
 {
 
     public partial class vw_ChonSize : Form
-    { 
+    {
         public string SizeDuocChon = "M"; // Mặc định là size M
         public decimal GiaSize = 0;
         public string GhiChu = "";
-    
+        public int SoLuong => (int)nudTangGiam.Value;
+        private string _tenSanPham;
+
         public vw_ChonSize()
         {
             InitializeComponent();
@@ -58,5 +61,35 @@ namespace ProjectQuanLyBanHang
             btnM.BackColor = Color.LightBlue;
             btnL.BackColor = Color.White;
         }
+        public vw_ChonSize(string tenSanPham = "")
+        {
+            InitializeComponent();
+            _tenSanPham = tenSanPham;
+        }
+        private void vw_ChonSize_Load(object sender, EventArgs e)
+        {
+            lblTenMon.Text = string.IsNullOrEmpty(_tenSanPham) ? "Chọn size" : _tenSanPham;
+            // Mặc định chọn M
+            btnM.BackColor = Color.LightBlue;
+            btnS.BackColor = Color.White;
+            btnL.BackColor = Color.White;
+
+            nudTangGiam.Minimum = 1;
+            nudTangGiam.Maximum = 99;
+            nudTangGiam.Value = 1;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void lblTenMon_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
+

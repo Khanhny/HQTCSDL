@@ -63,7 +63,7 @@ namespace ProjectQuanLyBanHang
             // Xử lý kết quả
             if (dangNhapThanhCong)
             {
-                Menu f = new Menu();
+                Menu f = new Menu(caDangChon);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();

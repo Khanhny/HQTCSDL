@@ -76,7 +76,7 @@
             this.btnNganHang.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNganHang.Location = new System.Drawing.Point(323, 171);
             this.btnNganHang.Name = "btnNganHang";
-            this.btnNganHang.Size = new System.Drawing.Size(165, 71);
+            this.btnNganHang.Size = new System.Drawing.Size(213, 71);
             this.btnNganHang.TabIndex = 3;
             this.btnNganHang.Text = "Ngân Hàng";
             this.btnNganHang.UseVisualStyleBackColor = true;
@@ -92,12 +92,13 @@
             this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnXacNhan
             // 
             this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnXacNhan.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXacNhan.Location = new System.Drawing.Point(266, 330);
+            this.btnXacNhan.Location = new System.Drawing.Point(254, 330);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(339, 53);
             this.btnXacNhan.TabIndex = 5;
@@ -117,6 +118,7 @@
             this.Controls.Add(this.lblTongCongg);
             this.Controls.Add(this.lblThanhToanDon);
             this.Name = "vw_ThanhToan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "vw_ThanhToan";
             this.Load += new System.EventHandler(this.vw_ThanhToan_Load);
             this.ResumeLayout(false);

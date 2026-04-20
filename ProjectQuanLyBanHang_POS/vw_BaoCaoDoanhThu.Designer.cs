@@ -37,12 +37,13 @@
             this.radCa = new System.Windows.Forms.RadioButton();
             this.dtpNgay = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dvgBaoCao = new System.Windows.Forms.DataGridView();
+            this.dgvBaoCao = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnTongConggg = new System.Windows.Forms.Button();
+            this.lblTongCong = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgBaoCao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBaoCao)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +70,7 @@
             this.btnXem.TabIndex = 6;
             this.btnXem.Text = "Xem Báo Cáo";
             this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXem.Click += new System.EventHandler(this.btnXemBaoCao_Click);
             // 
             // lbCa
             // 
@@ -99,6 +101,7 @@
             this.radNgay.TabStop = true;
             this.radNgay.Text = "Ngày";
             this.radNgay.UseVisualStyleBackColor = true;
+            this.radNgay.CheckedChanged += new System.EventHandler(this.rbCa_CheckedChanged);
             // 
             // radGio
             // 
@@ -111,6 +114,7 @@
             this.radGio.TabStop = true;
             this.radGio.Text = "Giờ";
             this.radGio.UseVisualStyleBackColor = true;
+            this.radGio.CheckedChanged += new System.EventHandler(this.rbCa_CheckedChanged);
             // 
             // radCa
             // 
@@ -134,39 +138,52 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dvgBaoCao);
+            this.panel2.Controls.Add(this.dgvBaoCao);
             this.panel2.Location = new System.Drawing.Point(0, 54);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(950, 463);
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top
+                               | System.Windows.Forms.AnchorStyles.Bottom
+                               | System.Windows.Forms.AnchorStyles.Left
+                               | System.Windows.Forms.AnchorStyles.Right;
             this.panel2.TabIndex = 2;
             // 
-            // dvgBaoCao
+            // dgvBaoCao
             // 
-            this.dvgBaoCao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgBaoCao.Location = new System.Drawing.Point(3, 3);
-            this.dvgBaoCao.Name = "dvgBaoCao";
-            this.dvgBaoCao.RowHeadersWidth = 51;
-            this.dvgBaoCao.RowTemplate.Height = 24;
-            this.dvgBaoCao.Size = new System.Drawing.Size(946, 450);
-            this.dvgBaoCao.TabIndex = 4;
+            this.dgvBaoCao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBaoCao.Name = "dgvBaoCao";
+            this.dgvBaoCao.RowHeadersWidth = 51;
+            this.dgvBaoCao.RowTemplate.Height = 24;
+            this.dgvBaoCao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBaoCao.TabIndex = 4;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnTongConggg);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.lblTongCong);
             this.panel3.Location = new System.Drawing.Point(3, 513);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(944, 59);
             this.panel3.TabIndex = 3;
             // 
-            // btnTongConggg
+            // lblTongCong
             // 
-            this.btnTongConggg.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTongConggg.Location = new System.Drawing.Point(2, 7);
-            this.btnTongConggg.Name = "btnTongConggg";
-            this.btnTongConggg.Size = new System.Drawing.Size(240, 49);
-            this.btnTongConggg.TabIndex = 0;
-            this.btnTongConggg.Text = "Tổng Cộng:";
-            this.btnTongConggg.UseVisualStyleBackColor = true;
+            this.lblTongCong.AutoSize = true;
+            this.lblTongCong.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongCong.Location = new System.Drawing.Point(177, 11);
+            this.lblTongCong.Name = "lblTongCong";
+            this.lblTongCong.Size = new System.Drawing.Size(0, 38);
+            this.lblTongCong.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(168, 38);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Tổng Cộng:";
             // 
             // vw_BaoCaoDoanhThu
             // 
@@ -178,11 +195,13 @@
             this.Controls.Add(this.panel1);
             this.Name = "vw_BaoCaoDoanhThu";
             this.Text = "vw_BaoCaoDoanhThu";
+            this.Load += new System.EventHandler(this.vw_BaoCaoDoanhThu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dvgBaoCao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBaoCao)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -198,8 +217,9 @@
         private System.Windows.Forms.RadioButton radCa;
         private System.Windows.Forms.DateTimePicker dtpNgay;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dvgBaoCao;
+        private System.Windows.Forms.DataGridView dgvBaoCao;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnTongConggg;
+        private System.Windows.Forms.Label lblTongCong;
+        private System.Windows.Forms.Label label1;
     }
 }
