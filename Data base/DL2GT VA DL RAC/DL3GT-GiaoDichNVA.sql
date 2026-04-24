@@ -1,18 +1,25 @@
---(Ưu tiên tiêu chuân)
-CREATE OR ALTER PROCEDURE sp_NhanVienA_ThemMon
-    @MaDon CHAR(4), @MaSP CHAR(4)
-AS
-BEGIN
-    SET DEADLOCK_PRIORITY NORMAL; 
-    BEGIN TRY
-        BEGIN TRANSACTION;
-            UPDATE ChiTietDon SET SoLuong = SoLuong + 1 WHERE MaDon = @MaDon AND MaSP = @MaSP;
-            WAITFOR DELAY '00:00:03'; 
-            UPDATE DonHang SET TongTien = TongTien + 25000 WHERE MaDon = @MaDon;
-        COMMIT TRANSACTION;
-    END TRY
-    BEGIN CATCH
-        IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
-    END CATCH
-END;
+use QuanLyBanHang
+go
+
+--- VẤN ĐỀ: KHÓA CHẾT 3 GIAO TÁC
+---- NHÂN VIÊN A -----
+
+-- NV A thêm món mới. Hệ thống gán mức ưu tiên NORMAL (tiêu chuẩn).
+SET DEADLOCK_PRIORITY NORMAL; 
+
+BEGIN TRAN;
+
+-- NV A cập nhật số lượng. Hệ thống cấp Khóa Độc Quyền (Lock-X) trên bảng Chi Tiết Đơn ngay lập tức.
+UPDATE ChiTietDon 
+SET SoLuong = SoLuong + 1 
+WHERE MaDon = 'DH01' AND MaSanPham = 'SP02';
+
+WAITFOR DELAY '00:00:05';
+
+-- NV A cộng dồn tiền -> Đòi cấp Lock-X trên bảng Đơn Hàng nhưng bị kẹt (WAIT).
+UPDATE DonHang 
+SET TongTien = TongTien + 25000 
+WHERE MaDon = 'DH01';
+
+COMMIT;
 GO
