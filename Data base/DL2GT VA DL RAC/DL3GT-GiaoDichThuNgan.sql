@@ -1,18 +1,25 @@
--- (Quyền ưu tiên cao nhất)
-CREATE OR ALTER PROCEDURE sp_ThuNgan_ThanhToan
-    @MaDon CHAR(4), @MaSP CHAR(4)
-AS
-BEGIN
-    SET DEADLOCK_PRIORITY HIGH; 
-    BEGIN TRY
-        BEGIN TRANSACTION;
-            UPDATE DonHang SET TrangThai = N'Đã thanh toán' WHERE MaDon = @MaDon;
-            WAITFOR DELAY '00:00:03'; 
-            UPDATE SanPham SET SoLuong = SoLuong - 1 WHERE MaSP = @MaSP;
-        COMMIT TRANSACTION;
-    END TRY
-    BEGIN CATCH
-        IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
-    END CATCH
-END;
+use QuanLyBanHang
+go
+
+--- VẤN ĐỀ : KHÓA CHẾT 3 GIAO TÁC 
+---- THU NGÂN -----
+
+-- TN chốt thanh toán. Hệ thống gán quyền HIGH, bảo vệ tuyệt đối luồng doanh thu.
+SET DEADLOCK_PRIORITY HIGH; 
+
+BEGIN TRAN;
+
+-- TN cập nhật giờ chốt đơn. Hệ thống cấp Khóa Độc Quyền (Lock-X) trên bảng Đơn Hàng ngay lập tức.
+UPDATE DonHang 
+SET ThoiGian = GETDATE() 
+WHERE MaDon = 'DH01';
+
+WAITFOR DELAY '00:00:10';
+
+-- TN trừ tồn kho -> Đòi cấp Lock-X trên bảng Sản Phẩm nhưng đụng Quản lý -> Hoàn tất vòng Deadlock.
+UPDATE SanPham 
+SET SoLuong = SoLuong - 1 
+WHERE MaSanPham = 'SP02';
+
+COMMIT;
 GO
