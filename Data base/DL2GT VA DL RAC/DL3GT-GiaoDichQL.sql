@@ -14,7 +14,7 @@ UPDATE SanPham
 SET GiaBan = 35000 
 WHERE MaSanPham = 'SP01';
 
-WAITFOR DELAY '00:00:03';
+WAITFOR DELAY '00:00:05';
 
 -- QL bấm Lưu chi tiết đơn -> Đòi cấp Lock-X trên bảng Chi Tiết Đơn nhưng bị kẹt (WAIT).
 UPDATE ChiTietDon 
