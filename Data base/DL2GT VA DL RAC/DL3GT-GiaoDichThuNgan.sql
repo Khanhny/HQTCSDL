@@ -2,24 +2,24 @@ use QuanLyBanHang
 go
 
 --- VẤN ĐỀ: KHÓA CHẾT 3 GIAO TÁC
----- NHÂN VIÊN A -----
+---- THU NGÂN -----
 
--- NV A thêm món mới. Hệ thống gán mức ưu tiên NORMAL (tiêu chuẩn).
-SET DEADLOCK_PRIORITY NORMAL; 
+-- TN chốt thanh toán. Hệ thống gán quyền HIGH, bảo vệ tuyệt đối luồng doanh thu.
+SET DEADLOCK_PRIORITY HIGH; 
 
 BEGIN TRAN;
 
--- NV A cập nhật số lượng. Hệ thống cấp Khóa Độc Quyền (Lock-X) trên bảng Chi Tiết Đơn ngay lập tức.
-UPDATE ChiTietDon 
-SET SoLuong = SoLuong + 1 
-WHERE MaDon = 'DH01' AND MaSanPham = 'SP02';
-
-WAITFOR DELAY '00:00:03';
-
--- NV A cộng dồn tiền -> Đòi cấp Lock-X trên bảng Đơn Hàng nhưng bị kẹt (WAIT).
+-- TN cập nhật giờ chốt đơn. Hệ thống cấp Khóa Độc Quyền (Lock-X) trên bảng Đơn Hàng ngay lập tức.
 UPDATE DonHang 
-SET TongTien = TongTien + 25000 
+SET ThoiGian = GETDATE() 
 WHERE MaDon = 'DH01';
+
+WAITFOR DELAY '00:00:05';
+
+-- TN trừ tồn kho -> Đòi cấp Lock-X trên bảng Sản Phẩm nhưng đụng Quản lý -> Hoàn tất vòng Deadlock.
+UPDATE SanPham 
+SET SoLuong = SoLuong - 1 
+WHERE MaSanPham = 'SP02';
 
 COMMIT;
 GO
