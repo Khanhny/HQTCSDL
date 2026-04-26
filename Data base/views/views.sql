@@ -14,6 +14,7 @@ select
     MaSanPham, 
     TenSanPham, 
     GiaBan, 
+    Size,
     MaDanhMuc
 from Sanpham;
 go
