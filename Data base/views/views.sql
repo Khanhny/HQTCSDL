@@ -26,6 +26,13 @@ select
     TenDanhMuc
 from Danhmuc;
 go
+    CREATE VIEW vw_ChonSize AS
+SELECT 
+    MaSanPham,
+    TenSanPham,
+    Size,
+    GiaBan
+FROM Sanpham
 
 -- 4. VIEW CHI TIẾT ĐƠN HÀNG (GIỎ HÀNG)
 CREATE OR ALTER view vw_ChiTietDonHang as
@@ -88,5 +95,12 @@ go
 CREATE OR ALTER view vw_DonHang as
 select * from Donhang;
 go
-
+    -- view chọn size 
+CREATE VIEW vw_ChonSize AS
+SELECT 
+    MaSanPham,
+    TenSanPham,
+    Size,
+    GiaBan
+FROM Sanpham
 
