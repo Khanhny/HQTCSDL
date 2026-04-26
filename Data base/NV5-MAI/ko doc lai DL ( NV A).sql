@@ -7,9 +7,9 @@ go
 BEGIN TRAN;
 -- NV check giá món "Trà Đào". 
 -- Dùng REPEATABLEREAD để ép hệ thống giữ Lock-S trên dòng này đến khi dứt điểm thanh toán.
-SELECT GiaBan 
+SELECT * 
 FROM Sanpham WITH (REPEATABLEREAD) 
-WHERE TenSanPham = N'Trà Đào'; 
+WHERE TenSanPham = N'Tra nho'and Size= 'S'; 
 -- Kết quả hiển thị: 30.000
 -- Giả lập độ trễ: NV tốn 10 giây để xác nhận với khách và bấm tính tiền
 WAITFOR DELAY '00:00:10'; 

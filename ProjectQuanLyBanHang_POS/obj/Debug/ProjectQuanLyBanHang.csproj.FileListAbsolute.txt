@@ -62,3 +62,20 @@ C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\Bài t�
 C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\Bài tập nhóm\ProjectQuanLyBanHang_POS\obj\Debug\ProjectQuanLyBanHang.csproj.CoreCompileInputs.cache
 C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\Bài tập nhóm\ProjectQuanLyBanHang_POS\obj\Debug\ProjectQuanLyBanHang.exe
 C:\Users\USER\OneDrive\Documents\Hệ Quản trị cơ sở dữ liệu\Bài tập nhóm\ProjectQuanLyBanHang_POS\obj\Debug\ProjectQuanLyBanHang.pdb
+C:\Users\Kny19\OneDrive\Documents\HỆ QTCSDL\HQTCSDL\ProjectQuanLyBanHang_POS\bin\Debug\ProjectQuanLyBanHang.exe.config
+C:\Users\Kny19\OneDrive\Documents\HỆ QTCSDL\HQTCSDL\ProjectQuanLyBanHang_POS\bin\Debug\ProjectQuanLyBanHang.exe
+C:\Users\Kny19\OneDrive\Documents\HỆ QTCSDL\HQTCSDL\ProjectQuanLyBanHang_POS\bin\Debug\ProjectQuanLyBanHang.pdb
+C:\Users\Kny19\OneDrive\Documents\HỆ QTCSDL\HQTCSDL\ProjectQuanLyBanHang_POS\obj\Debug\ProjectQuanLyBanHang.csproj.AssemblyReference.cache
+C:\Users\Kny19\OneDrive\Documents\HỆ QTCSDL\HQTCSDL\ProjectQuanLyBanHang_POS\obj\Debug\ProjectQuanLyBanHang.AccountProfile.resources
+C:\Users\Kny19\OneDrive\Documents\HỆ QTCSDL\HQTCSDL\ProjectQuanLyBanHang_POS\obj\Debug\ProjectQuanLyBanHang.Login.resources
+C:\Users\Kny19\OneDrive\Documents\HỆ QTCSDL\HQTCSDL\ProjectQuanLyBanHang_POS\obj\Debug\ProjectQuanLyBanHang.Properties.Resources.resources
+C:\Users\Kny19\OneDrive\Documents\HỆ QTCSDL\HQTCSDL\ProjectQuanLyBanHang_POS\obj\Debug\ProjectQuanLyBanHang.Menu.resources
+C:\Users\Kny19\OneDrive\Documents\HỆ QTCSDL\HQTCSDL\ProjectQuanLyBanHang_POS\obj\Debug\ProjectQuanLyBanHang.vw_BaoCaoDoanhThu.resources
+C:\Users\Kny19\OneDrive\Documents\HỆ QTCSDL\HQTCSDL\ProjectQuanLyBanHang_POS\obj\Debug\ProjectQuanLyBanHang.vw_ChonSize.resources
+C:\Users\Kny19\OneDrive\Documents\HỆ QTCSDL\HQTCSDL\ProjectQuanLyBanHang_POS\obj\Debug\ProjectQuanLyBanHang.vw_DonHang.resources
+C:\Users\Kny19\OneDrive\Documents\HỆ QTCSDL\HQTCSDL\ProjectQuanLyBanHang_POS\obj\Debug\ProjectQuanLyBanHang.vw_ThanhCong.resources
+C:\Users\Kny19\OneDrive\Documents\HỆ QTCSDL\HQTCSDL\ProjectQuanLyBanHang_POS\obj\Debug\ProjectQuanLyBanHang.vw_ThanhToan.resources
+C:\Users\Kny19\OneDrive\Documents\HỆ QTCSDL\HQTCSDL\ProjectQuanLyBanHang_POS\obj\Debug\ProjectQuanLyBanHang.csproj.GenerateResource.cache
+C:\Users\Kny19\OneDrive\Documents\HỆ QTCSDL\HQTCSDL\ProjectQuanLyBanHang_POS\obj\Debug\ProjectQuanLyBanHang.csproj.CoreCompileInputs.cache
+C:\Users\Kny19\OneDrive\Documents\HỆ QTCSDL\HQTCSDL\ProjectQuanLyBanHang_POS\obj\Debug\ProjectQuanLyBanHang.exe
+C:\Users\Kny19\OneDrive\Documents\HỆ QTCSDL\HQTCSDL\ProjectQuanLyBanHang_POS\obj\Debug\ProjectQuanLyBanHang.pdb

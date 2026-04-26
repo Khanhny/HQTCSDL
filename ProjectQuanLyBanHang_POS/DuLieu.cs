@@ -11,7 +11,7 @@ namespace ProjectQuanLyBanHang
     public static class DuLieu
     {
         private static readonly string connectionString =
-            "Server=localhost\\SQLEXPRESS;Database=POS;Integrated Security=True;";
+            @"Server=LAPTOP-4KPD037I\SQLEXPRESS;Database=QuanLyBanHang;Integrated Security=True;";
 
         public static SqlConnection GetConnection()
         {

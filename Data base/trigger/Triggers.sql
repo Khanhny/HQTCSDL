@@ -1,116 +1,85 @@
 USE QuanLyBanHang;
 GO
 
--- 1. Trigger Tự tạo mã đơn
-CREATE OR ALTER TRIGGER trg_TuDongTaoMaDon
-ON Donhang
-INSTEAD OF INSERT
-AS
-BEGIN
-    DECLARE @MaDon VARCHAR(20);
-    SELECT @MaDon = 'DH' + CONVERT(VARCHAR, GETDATE(), 112) + 
-                    RIGHT('000' + CAST(ISNULL((SELECT COUNT(*) FROM Donhang), 0) + 1 AS VARCHAR), 3);
-    
-    INSERT INTO Donhang (MaDon, ThoiGian, TongTien, MaCa)
-    SELECT @MaDon, GETDATE(), ISNULL(TongTien, 0), MaCa FROM inserted;
-END;
-GO
-
--- 2. Trigger Tự lấy Mã SP từ Tên SP
+-- 1. Trigger Tu dong lay Ma SP tu Ten SP (da sua: dung CURSOR xu ly nhieu dong)
 CREATE OR ALTER TRIGGER trg_TuDongLayMaSP
 ON Chitietdon
 INSTEAD OF INSERT
 AS
 BEGIN
-    DECLARE @MaDon varchar(20), @TenSP varchar(30), @SoLuong int, @Size varchar(5);
-    DECLARE @MaSP_TimDuoc char(4), @Gia_TimDuoc int;
+    -- Khai bao bien cho cursor
+    DECLARE @MaDon      VARCHAR(20),
+            @TenSP      VARCHAR(30),
+            @SoLuong    INT,
+            @Size       CHAR(3);
+    DECLARE @MaSP_TimDuoc CHAR(4),
+            @Gia_TimDuoc  INT;
 
-    -- Lấy dữ liệu 
-    SELECT 
-        @MaDon = MaDon,
-        @SoLuong = SoLuong,
-        @TenSP = MaSanPham, 
-        @Size = Size
-    from inserted;
+    -- Dung CURSOR de xu ly tung dong trong bang inserted
+    -- (SELECT FROM inserted ma khong dung cursor chi lay duoc 1 dong cuoi)
+    DECLARE cur CURSOR LOCAL FAST_FORWARD FOR
+        SELECT MaDon, MaSanPham, Size, SoLuong FROM inserted;
 
-    -- Tìm Mã và Giá
-    SELECT 
-        @MaSP_TimDuoc = MaSanPham,
-        @Gia_TimDuoc = GiaBan
-    from Sanpham
-    where TenSanPham = @TenSP;
+    OPEN cur;
+    FETCH NEXT FROM cur INTO @MaDon, @TenSP, @Size, @SoLuong;
 
-    IF @MaSP_TimDuoc is not null
-    BEGIN 
-        -- Chèn vào bảng thực 
-        INSERT INTO Chitietdon(MaDon, MaSanPham, Size, SoLuong, Gia)
-        VALUES (@MaDon, @MaSP_TimDuoc, @Size, @SoLuong, @Gia_TimDuoc);
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- MaSanPham trong inserted chua TenSanPham (theo thiet ke cu), tim MaSP that
+        SELECT @MaSP_TimDuoc = MaSanPham,
+               @Gia_TimDuoc  = GiaBan
+        FROM Sanpham
+        WHERE TenSanPham = @TenSP AND Size = @Size;
+
+        IF @MaSP_TimDuoc IS NOT NULL
+        BEGIN
+            INSERT INTO Chitietdon (MaDon, MaSanPham, Size, SoLuong, Gia)
+            VALUES (@MaDon, @MaSP_TimDuoc, @Size, @SoLuong, @Gia_TimDuoc);
+        END
+        ELSE
+            PRINT N'Lỗi: Không tìm thấy sản phẩm tên ' + @TenSP + N' size ' + @Size;
+
+        -- Reset bien de tranh dung lai gia tri cu
+        SET @MaSP_TimDuoc = NULL;
+        SET @Gia_TimDuoc  = NULL;
+
+        FETCH NEXT FROM cur INTO @MaDon, @TenSP, @Size, @SoLuong;
     END
-    ELSE
-        PRINT 'Loi: Khong tim thay san pham ten ' + @TenSP;
+
+    CLOSE cur;
+    DEALLOCATE cur;
 END;
 GO
 
--- 3. Trigger Cập nhật tổng tiền đơn hàng
+-- 2. Trigger Cap nhat tong tien don hang
 CREATE OR ALTER TRIGGER trg_CapNhatTongTien
 ON Chitietdon
 AFTER INSERT, UPDATE, DELETE
 AS
 BEGIN
     UPDATE Donhang
-    SET TongTien = ISNULL((SELECT SUM(SoLuong * Gia) FROM Chitietdon WHERE Chitietdon.MaDon = Donhang.MaDon), 0)
+    SET TongTien = ISNULL(
+        (SELECT SUM(SoLuong * Gia) FROM Chitietdon WHERE Chitietdon.MaDon = Donhang.MaDon),
+        0)
     WHERE MaDon IN (SELECT MaDon FROM inserted UNION SELECT MaDon FROM deleted);
 END;
 GO
 
---4.Trigger Ghi lịch sử khi tạo đơn 
+-- 3. Trigger Ghi lich su khi tao don
+--    MaLog la IDENTITY -> khong insert MaLog, SQL Server tu dong cap gia tri
+--    Bo sung ThoiGian DEFAULT GETDATE() nen trigger khong can truyen
 CREATE OR ALTER TRIGGER trg_GhiLichSuKhiTaoDon
 ON Donhang
 AFTER INSERT
 AS
 BEGIN
-    INSERT INTO Lichsugiaotac (MaDon, MaCa, HanhDong, NoiDungChiTiet)
-    SELECT 
-        MaDon, 
-        MaCa, 
-        N'Tạo mới', 
-        N'Đơn hàng mới tại ca ' + CAST(MaCa AS VARCHAR)
-        --cast để ép từ int thành chuỗi để + vào chuỗi
+    INSERT INTO Lichsugiaotac (MaDon, MaCa, HanhDong, NoiDungChiTiet, ThoiGian)
+    SELECT
+        MaDon,
+        MaCa,
+        N'Tạo mới',
+        N'Đơn hàng mới tại ca ' + CAST(MaCa AS VARCHAR),
+        GETDATE()
     FROM inserted;
 END;
-
---CREATE OR ALTER TRIGGER trg_KhongChoXoaDanhMuc
-
---ON Danhmuc
-
---INSTEAD OF DELETE
-
---AS
-
---BEGIN
-
---    --khóa đọc
-
---    SET TRANSACTION ISOLATION LEVEL READ COMMITTED; 
-
---    IF EXISTS (SELECT 1 FROM Sanpham WHERE MaDanhMuc IN (SELECT MaDanhMuc FROM deleted))
-
---    BEGIN
-
---        PRINT N'Lỗi: Không được xóa danh mục vì vẫn còn sản phẩm bên trong!';
-
---        ROLLBACK TRANSACTION;
-
---    END
-
---    ELSE
-
---    BEGIN
-
---        DELETE FROM Danhmuc WHERE MaDanhMuc IN (SELECT MaDanhMuc FROM deleted);
-
---    END
-
---END;
-
---GO
+GO

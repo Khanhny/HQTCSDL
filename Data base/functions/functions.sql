@@ -1,82 +1,73 @@
-
-/*function fn_DemSoLuongSanPham
-/* ở Bang chi tiet don hang ,(view gio hang)
-*/*/
-use QuanLyBanHang;
-go
-CREATE OR ALTER function fn_DemSoLuongSanPham(@MaDon nvarchar(20))
-returns int 
-as 
-begin
-
-declare @TongSoLuong int 
-select @TongSoLuong= sum (CTD.SoLuong) 
-from ChiTietDon CTD
-where CTD.MaDon=@MaDon
-return @TongSoLuong
-end
+USE QuanLyBanHang;
 GO
 
-/* function fn_TinhTongTienDonHang(@MaDon nvarchar (20))
- * ở Bang chi tiet don hang ,(view gio hang) */
-CREATE OR ALTER function fn_TinhTongTienDonHang(@MaDon char(4))
-returns int 
-as
-begin
-declare @TongTien int 
-select @TongTien = sum(CTD.Gia*CTD.SoLuong)
-from ChiTietDon CTD
-where CTD.MaDon= @MaDon
-return @TongTien
-end
-GO
-/* fn_DoanhThuTheoNgay(@Ngay date)
- * Bảng đơn hàng, View báo cáo doanh thu 
-*/
-CREATE OR ALTER function fn_DoanhThuTheoNgay(@Ngay date)
-returns int
-as
-begin
-declare @DoanhThuTheoNgay int
-select @DoanhThuTheoNgay= isnull(sum(DH.TongTien),0)
-from Donhang DH WITH (SERIALIZABLE)
---áp dụng mức bảo vệ dữ liệu cao nhất và nghiêm ngặt nhất
-where cast(DH.ThoiGian as date )= @Ngay
-/*dùng cast as date -> Chuyển dữ liệu từ kiểu DATETIME-> chỉ lấy phần DATE (ngày/tháng/năm)
- * cast rất chính xác nên thích hợp dùng cho ngày tháng năm*/
-return @DoanhThuTheoNgay
-end
+-- fn_DemSoLuongSanPham: Dem tong so luong san pham trong 1 don hang
+-- Dung o: Bang chi tiet don hang, View gio hang
+CREATE OR ALTER FUNCTION fn_DemSoLuongSanPham(@MaDon VARCHAR(20))
+RETURNS INT
+AS
+BEGIN
+    DECLARE @TongSoLuong INT;
+    SELECT @TongSoLuong = SUM(CTD.SoLuong)
+    FROM Chitietdon CTD
+    WHERE CTD.MaDon = @MaDon;
+    RETURN @TongSoLuong;
+END;
 GO
 
-/* fn_DoanhThuTheoCa(@MaCa int)
- * Bảng đơn hàng, View báo cáo doanh thu 
-*/
-CREATE OR ALTER function fn_DoanhThuTheoCa(@MaCa int)
-returns int
-as
-begin
-declare @DoanhThuTheoCa int
-select @DoanhThuTheoCa = isnull(sum(DH.TongTien),0)
-from Donhang DH WITH (SERIALIZABLE)
---áp dụng mức bảo vệ dữ liệu cao nhất và nghiêm ngặt nhất
-where DH.MaCa= @MaCa
-return @DoanhThuTheoCa
-end
+-- fn_TinhTongTienDonHang: Tinh tong tien cua 1 don hang
+-- Tham so MaDon doi thanh VARCHAR(20) cho khop voi bang Donhang
+CREATE OR ALTER FUNCTION fn_TinhTongTienDonHang(@MaDon VARCHAR(20))
+RETURNS INT
+AS
+BEGIN
+    DECLARE @TongTien INT;
+    SELECT @TongTien = SUM(CTD.Gia * CTD.SoLuong)
+    FROM Chitietdon CTD
+    WHERE CTD.MaDon = @MaDon;
+    RETURN @TongTien;
+END;
 GO
 
-/* fn_DoanhThuTheoCa(@MaCa int)
- * Bảng đơn hàng, View báo cáo doanh thu 
-*/
-CREATE OR ALTER function fn_DoanhThuTheoGio(@Gio int)
-returns int
-as
-begin
-declare @DoanhThuTheoGio int
-select @DoanhThuTheoGio = isnull(sum(DH.TongTien),0)
-from Donhang DH WITH (SERIALIZABLE)
---áp dụng mức bảo vệ dữ liệu cao nhất và nghiêm ngặt nhất
-where datepart(hour,DH.ThoiGian)= @Gio
-/*dùng datepart để lấy phần giờ, vì cast chính xác quá nên khó ss giây = -> dùng datepart hợp lý hơn)*/
-return @DoanhThuTheoGio
-end
+-- fn_DoanhThuTheoNgay: Tong doanh thu theo ngay
+-- SERIALIZABLE -> Range Lock, chong Phantom Read
+CREATE OR ALTER FUNCTION fn_DoanhThuTheoNgay(@Ngay DATE)
+RETURNS INT
+AS
+BEGIN
+    DECLARE @DoanhThuTheoNgay INT;
+    SELECT @DoanhThuTheoNgay = ISNULL(SUM(DH.TongTien), 0)
+    FROM Donhang DH WITH (SERIALIZABLE)
+    WHERE CAST(DH.ThoiGian AS DATE) = @Ngay;
+    RETURN @DoanhThuTheoNgay;
+END;
+GO
+
+-- fn_DoanhThuTheoCa: Tong doanh thu theo ca lam viec
+-- @MaCa INT cho khop voi bang Calamviec
+-- SERIALIZABLE -> Range Lock, chong Phantom Read
+CREATE OR ALTER FUNCTION fn_DoanhThuTheoCa(@MaCa INT)
+RETURNS INT
+AS
+BEGIN
+    DECLARE @DoanhThuTheoCa INT;
+    SELECT @DoanhThuTheoCa = ISNULL(SUM(DH.TongTien), 0)
+    FROM Donhang DH WITH (SERIALIZABLE)
+    WHERE DH.MaCa = @MaCa;
+    RETURN @DoanhThuTheoCa;
+END;
+GO
+
+-- fn_DoanhThuTheoGio: Tong doanh thu theo gio
+-- SERIALIZABLE -> Range Lock, chong Phantom Read
+CREATE OR ALTER FUNCTION fn_DoanhThuTheoGio(@Gio INT)
+RETURNS INT
+AS
+BEGIN
+    DECLARE @DoanhThuTheoGio INT;
+    SELECT @DoanhThuTheoGio = ISNULL(SUM(DH.TongTien), 0)
+    FROM Donhang DH WITH (SERIALIZABLE)
+    WHERE DATEPART(HOUR, DH.ThoiGian) = @Gio;
+    RETURN @DoanhThuTheoGio;
+END;
 GO
