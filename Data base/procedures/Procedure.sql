@@ -109,8 +109,8 @@ BEGIN
 END;
 GO
 
--- 4. Thu tuc Chot Thanh Toan  (ten co hau to _Procedure de phan biet voi cac file demo)
-CREATE OR ALTER PROCEDURE sp_ThanhToanDonHang_Procedure
+-- 4. Thu tuc Chot Thanh Toan   
+CREATE OR ALTER PROCEDURE sp_ThanhToanDonHang
     @MaDon VARCHAR(20),
     @MaCa  INT            -- INT cho khop voi bang Calamviec
 AS
