@@ -19,21 +19,14 @@ select
 from Sanpham;
 go
 
--- 3. VIEW DANH MỤC SẢN PHẨM 
+-- 3. VIEW DANH MỤC 
 CREATE OR ALTER view vw_DanhMucSanPham as
 select
     MaDanhMuc, 
     TenDanhMuc
 from Danhmuc;
 go
-    CREATE VIEW vw_ChonSize AS
-SELECT 
-    MaSanPham,
-    TenSanPham,
-    Size,
-    GiaBan
-FROM Sanpham
-
+   
 -- 4. VIEW CHI TIẾT ĐƠN HÀNG (GIỎ HÀNG)
 CREATE OR ALTER view vw_ChiTietDonHang as
 select 
@@ -95,7 +88,7 @@ go
 CREATE OR ALTER view vw_DonHang as
 select * from Donhang;
 go
-    -- view chọn size 
+    -- 8.view chọn size 
 CREATE VIEW vw_ChonSize AS
 SELECT 
     MaSanPham,
@@ -104,3 +97,17 @@ SELECT
     GiaBan
 FROM Sanpham
 
+-- 5. VIEW CHI TIET SAN PHAM (Join bảng Donhang và Chitietdon)
+CREATE OR ALTER view vw_ChiTietSanPham as
+select
+    dh.MaDon,
+    dh.ThoiGian,
+    dh.TongTien,
+    dh.MaCa,
+    ct.MaSanPham,
+    ct.Size,
+    ct.SoLuong,
+    ct.Gia
+from Donhang dh
+join Chitietdon ct on dh.MaDon = ct.MaDon;
+go 

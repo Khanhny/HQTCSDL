@@ -5,7 +5,7 @@ go
 ---- (NHÂN VIÊN) -----
 
 BEGIN TRAN;
--- NV check giá món "Trà Đào". 
+-- NV check giá món "Trà nho". 
 -- Dùng REPEATABLEREAD để ép hệ thống giữ Lock-S trên dòng này đến khi dứt điểm thanh toán.
 SELECT * 
 FROM Sanpham WITH (REPEATABLEREAD) 

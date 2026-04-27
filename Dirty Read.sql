@@ -1,0 +1,6 @@
+BEGIN TRANSACTION
+UPDATE Sanpham
+SET GiaBan = 50000
+WHERE TenSanPham = N'Cà phê đen' AND Size = 'S'
+
+ROLLBACK

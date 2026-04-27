@@ -97,3 +97,8 @@ INSERT INTO Sanpham (MaSanPham, TenSanPham, GiaBan, MaDanhMuc, Size) VALUES
 ('TTC1','Tra mang cau',45000, 'TTC','L'), ('TTC2','Tra dau', 45000,'TTC','L'), ('TTC3','Tra dao', 45000,'TTC','L'),
 ('TTC4','Tra nho',     45000, 'TTC','L'), ('TTC5','Tra vai', 45000,'TTC','L');
 GO
+
+
+UPDATE SanPham
+SET GiaBan = 50000
+WHERE TenSanPham = 'Ca phe den' AND Size = 'S';
